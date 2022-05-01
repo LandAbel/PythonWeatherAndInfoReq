@@ -92,6 +92,19 @@ class Weathercall:
             for i in range(0,len(be)):
                 if (be[i]==masikbe[i]):
                     return True
+        def BenneVan(bemenettömb):
+            for i in range(0,len(bemenettömb)):
+                seged=bemenettömb[i]
+                for j  in range(0,len(seged)):
+                    if(seged[j]==':'):
+                        segedtömb=seged.split(":")
+                        exseged=""
+                        for z in range(0,len(segedtömb)-1):
+                            exseged+=f"{segedtömb[z]} "
+                        exseged+=segedtömb[len(segedtömb)-1]
+                        bemenettömb[i]=exseged
+                        #print(bemenettömb[i])
+        BenneVan(bemenettömb)
         Nagybetus=[]
         MegynitandoVaros=[]
         for i in range(0,len(bemenettömb)):
